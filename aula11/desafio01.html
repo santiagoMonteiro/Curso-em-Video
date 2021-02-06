@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    
+    <style>
+        body{
+            font: normal 18pt Arial;
+            background-color: rgb(22, 141, 238);
+        }
+        h1#title{
+            color: rgb(255, 153, 0);
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id='title'>Nacionalidade</h1>
+    País: <input type="text" name="txt_pais" id="txt_pais">
+    <input type="button" value="Verificar" onclick="verifica_nacionalidade()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function verifica_nacionalidade() {
+            var pais = window.document.querySelector('input#txt_pais')
+            var res = window.document.querySelector('div#res')
+            var pais_minusculo = pais.value.toLowerCase()
+            // temos que dizer brasileiro mesmo se escrever o país em letras minúsculas
+
+            if (pais_minusculo == 'brasil') {
+                res.innerHTML = '<p>Você é <strong>Brasileiro</strong>!</p>'
+            } else {
+                res.innerHTML = '<p>Você é <strong>Estrangeiro</strong>!</p>'
+            }
+            res.innerHTML += 'Muito prazer em conhecê-lo!'
+        }
+    </script>
+</body>
+</html>
